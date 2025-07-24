@@ -1,0 +1,188 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<script src="chrome-extension://fjnbnpbmkenffdnngjfgmeleoegfcffe/static/js/contentInt.js"/>
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZHR_PLANEJAMENTO_FERIAS_SRV" xml:lang="pt" sap:schema-version="1">
+<EntityType Name="zhr_soma_data" sap:content-version="1">
+<Key>
+<PropertyRef Name="Data"/>
+</Key>
+<Property Name="results" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Data" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_recupera_plan_ferias" sap:content-version="1">
+<Key>
+<PropertyRef Name="Pernr"/>
+</Key>
+<Property Name="Begda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Início da validade" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Endda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Fim da validade" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Perio" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Caractere 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Statp" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Status planej." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Statptx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Denominação" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Leday" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Lebeg" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Leend" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Abono" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Caractere 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Optxb" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="13º salário" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dtlim" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Flag13" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Anzhl" Type="Edm.Decimal" Nullable="false" Precision="11" Scale="2" sap:unicode="false" sap:label="Contingente" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Qtdedias" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Qtde Dias" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_lista_ausencias" sap:content-version="1">
+<Key>
+<PropertyRef Name="Awart"/>
+</Key>
+<Property Name="Awart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="TpAusên./pres." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="AwartTx" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="TxtTpPres./aus." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_recupera_ausencia" sap:content-version="1">
+<Key>
+<PropertyRef Name="Pernr"/>
+</Key>
+<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Visao" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Caractere 01" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="start" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Vál.desde" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="end" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Válido até" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Awart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="TpAusên./pres." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="title" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="TxtTpPres./aus." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Tipo" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Caractere 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Statp" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Status planej." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_recupera_contingente" sap:content-version="1">
+<Key>
+<PropertyRef Name="Pernr"/>
+</Key>
+<Property Name="Dplan" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Dias de planejamento" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Quonr" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Nº contingente" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Statp1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Status planej." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Begda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Vál.desde" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dausen" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Dias de ausência" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Statp2" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Status planej." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Endda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Válido até" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Statp3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Status planej." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Desta" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Início dedução" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Deend" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="FimDedução" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Anzhl" Type="Edm.Decimal" Nullable="false" Precision="11" Scale="2" sap:unicode="false" sap:label="Nº contings." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Kverb" Type="Edm.Decimal" Nullable="false" Precision="11" Scale="2" sap:unicode="false" sap:label="Dedução" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_valida_data" sap:content-version="1">
+<Key>
+<PropertyRef Name="Begda"/>
+<PropertyRef Name="Dias"/>
+<PropertyRef Name="Pernr"/>
+</Key>
+<Property Name="Begda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Início da validade" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dias" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Numc3, utilização interna" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="DtValida" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Endda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Campo do tipo DATS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="flag13Off" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_recupera_equipe" sap:content-version="1">
+<Key>
+<PropertyRef Name="Pernr"/>
+</Key>
+<Property Name="Visao" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Caractere 1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Cname" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Nome completo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Stell" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Cargo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="StellTx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Denominação" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Plans" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Posição" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="PlansTx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Denominação" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="ID/nº descrit." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Foto" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="FOTO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Atualiza" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Userpernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_grava_plan_ferias" sap:content-version="1">
+<Key>
+<PropertyRef Name="Pernr"/>
+</Key>
+<Property Name="Flag132" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Abono" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Flag133" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Begda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Endda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Flag13" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dtini" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dtfim" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dias" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nº dois dígitos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dtini2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dtfim2" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dias2" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nº dois dígitos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dtini3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dtfim3" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Dias3" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nº dois dígitos" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tipo mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Classe de mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Nº mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="Txt.mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Nº do log" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Nº mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Variável mensagens" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Variável mensagens" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Variável mensagens" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Variável mensagens" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_delete_plan_ferias" sap:content-version="1">
+<Key>
+<PropertyRef Name="Begda"/>
+<PropertyRef Name="Endda"/>
+<PropertyRef Name="Pernr"/>
+</Key>
+<Property Name="Begda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Endda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tipo mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Classe de mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Number" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Nº mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Message" Type="Edm.String" Nullable="false" MaxLength="220" sap:unicode="false" sap:label="Txt.mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="LogNo" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Nº do log" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="LogMsgNo" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Nº mensagem" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="MessageV1" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Variável mensagens" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="MessageV2" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Variável mensagens" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="MessageV3" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Variável mensagens" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="MessageV4" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Variável mensagens" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_imprime_plan_ferias" sap:content-version="1">
+<Key>
+<PropertyRef Name="Pernr"/>
+</Key>
+<Property Name="Begda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Endda" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Cadeia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Flag1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Flag2" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Flag3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº pessoal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Pdf" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PDF" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="zhr_verifica_credenciais" sap:content-version="1">
+<Key>
+<PropertyRef Name="Senha"/>
+<PropertyRef Name="Usuario"/>
+</Key>
+<Property Name="Senha" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Senha" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Usuario" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityContainer Name="ZHR_PLANEJAMENTO_FERIAS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+<EntitySet Name="zhr_soma_dataSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_soma_data" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_recupera_plan_feriasSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_recupera_plan_ferias" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_lista_ausenciasSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_lista_ausencias" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_recupera_ausenciaSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_recupera_ausencia" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_recupera_contingenteSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_recupera_contingente" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_valida_dataSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_valida_data" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_recupera_equipeSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_recupera_equipe" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_grava_plan_feriasSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_grava_plan_ferias" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_delete_plan_feriasSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_delete_plan_ferias" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_imprime_plan_feriasSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_imprime_plan_ferias" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="zhr_verifica_credenciaisSet" EntityType="ZHR_PLANEJAMENTO_FERIAS_SRV.zhr_verifica_credenciais" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+</EntityContainer>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://sap-fiori-dev.telebras.com.br:8000/sap/opu/odata/sap/ZHR_PLANEJAMENTO_FERIAS_SRV/$metadata"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://sap-fiori-dev.telebras.com.br:8000/sap/opu/odata/sap/ZHR_PLANEJAMENTO_FERIAS_SRV/$metadata"/>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,13 @@
+specVersion: "3.2"
+type: application
+
+metadata:
+  name: agendamento.telebras
+
+framework:
+  name: SAPUI5
+  version: "1.120.6"
+  libraries:
+    - name: sap.ui.core
+    - name: sap.m
+    - name: sap.ui.layout

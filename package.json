@@ -1,0 +1,23 @@
+{
+  "name": "zplan_ferias",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "ui5 serve -o /index.html?responderOn=true",
+    "start:proxy": "ui5 serve -o /index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ui5/cli": "^4",
+    "ui5-middleware-simpleproxy": "^3.4.3"
+  },
+  "ui5": {
+    "dependencies": ["ui5-middleware-simpleproxy"]
+  }
+}
